@@ -11,14 +11,16 @@ app.use(cors());
 
 app.use("/auth", userRouter);
 app.use("/recipes", recipesRouter);
+const uri = "mongodb+srv://shux:ayantika@cluster0.bkaw5xv.mongodb.net/recipetest?retryWrites=true&w=majority";
 
 mongoose.connect(
-  "mongodb+srv://user123:Password123Tech@test.m6cb1nv.mongodb.net/recipetest?retryWrites=true&w=majority",
+  uri,
+
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   }
 );
 
-app.listen(3001, () => console.log("Server started"));
+app.listen(3002, () => console.log("Server started"));
 export default app;
